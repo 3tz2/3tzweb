@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Tajawal';
+    src: url("./font/TAJAWAL-REGULAR.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: #1b1d1f; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', 'Roboto', Arial, sans-serif;
+    font-size: 18px;
+
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg3.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    /* تأثير التمويه */
+    z-index: -1;
+    /* لضمان بقاء التمويه في الخلفية */
+
+}
+
+
+/*  */
+.mainPage {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+    height: 80%;
+    /* animation: fadein 9s ease-in-out; */
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.user-profile {
+
+    background-color: #000000;
+    /* خلفية داكنة */
+    color: #fff;
+    /* لون النص */
+    border-radius: 15px;
+    /* زوايا مستديرة */
+    padding: 20px;
+    /* مساحة داخلية */
+    width: 400px;
+    /* عرض الكارد */
+    text-align: center;
+    /* توسيط النص */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.9);
+    /* ظل */
+}
+
+@media screen and (max-width: 768px) {
+    .user-profile {
+        width: 400px;
+    }
+
+    .mainPage {
+        padding-right: 10px;
+    }
+}
+
+
+
+.profile-header {
+    display: flex;
+    /* استخدام flexbox */
+    justify-content: space-between;
+    /* توزيع العناصر */
+    align-items: center;
+    /* محاذاة العناصر في المنتصف */
+}
+
+.profile-img {
+    border-radius: 50%;
+    /* صورة دائرية */
+    width: 90px;
+    /* عرض الصورة */
+    height: 90px;
+    /* ارتفاع الصورة */
+}
+.status-container a{
+text-decoration: none;
+}
+.status-button {
+    display: flex;
+    background: linear-gradient(to left, #416900 10%, #2e2e2e 50%);
+    background-position: left;
+    border: none;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    padding: 5px 5px;
+    cursor: pointer;
+    background-size: 200% 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.status-button.hovered {
+    background-position: right; 
+    background-color: #38393a; 
+    box-shadow: 0 0 12px rgb(50, 110, 0);
+}
+
+.status-button svg {
+    transition: transform 0.3s ease-in-out; /* إضافة تأثير انتقال للأيقونة */
+}
+
+.status-button.hovered svg {
+    transform: rotate(90deg); /* تدوير الأيقونة عند تمرير الماوس */
+}
+
+.status-button p{
+    padding-left: 3px;
+    font-weight: bold;
+   
+}
+.playing-info {
+    margin: 10px;
+    /* مساحة فوق المعلومات */
+
+}
+
+.playing-info h3 {
+    margin-bottom: 5px;
+    /* مساحة تحت العنوان */
+}
+
+.counterCss svg {
+    color: rgb(190, 190, 190);
+
+}
+
+.game {
+    width: 100%;
+    background: linear-gradient(to left, #693800 5%, #2e2e2e 50%);
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    background-size: 200% 100%;
+    background-position: left;
+    transition: all 0.3s ease-in-out;
+}
+.game p {
+    text-align: right;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+    /* Ensure text occupies remaining space */
+}
+
+.game svg {
+    width: 33%;
+    min-width: 100px;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.game a {
+    text-decoration: none;
+    color: #946528;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.game.hovered {
+    background-position: right;
+    padding: 29px 19px;
+    box-shadow: 0 0 10px #693800;
+}
+
+.game.hovered svg {
+    transform: rotate(15deg);
+}
+
+.game.hovered a {
+    color: #fcfcfc;
+    text-shadow: 0 0 10px #fff;
+}
+
+
+.acccenter{
+    color: #ffffff;
+    /* Adjust according to your theme */
+    margin-bottom: 1px;
+    /* Space below heading */
+    text-align: center;
+    padding: 1px;
+
+}
+
+.profile-actions a {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 1px;
+    text-decoration: none;
+}
+
+.profile-actions button {
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    color: rgb(212, 208, 208);
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.profile-actions .get{
+    background: linear-gradient(to left, #141d46 20%, #2e2e2e 50%);
+    background-size: 200% 100%;
+    background-position: left;
+}
+.get:hover {
+  color: #728cff;
+  text-shadow: 0 0 12px #728cff;
+}
+.profile-actions .dis{
+    background: linear-gradient(to left, #7289da 10%, #2e2e2e 50%);
+    background-size: 200% 100%;
+    background-position: left;
+}
+.dis:hover {
+    color: #8196e0;
+    text-shadow: 0 0 12px #8a9fee;
+  }
+.profile-actions .insta{
+    background: linear-gradient(to left, #C13584 10%, #2e2e2e 50%);
+    background-size: 200% 100%;
+    background-position: left;
+}
+.insta:hover {
+    color: #ff4bb1;
+    text-shadow: 0 0 12px #ff56b6;
+  }
+.profile-actions .gmail{
+    background: linear-gradient(to left, #229645 10%, #2e2e2e 50%);
+    background-size: 200% 100%;
+    background-position: left;
+}
+.gmail:hover {
+    color: #28c958;
+    text-shadow: 0 0 12px #3af171;
+  }
+.profile-actions button:hover {
+    background-position: right;
+    box-shadow: 0 0 10px #505050;
+    padding: 20px;
+}
+
+/*  */
+.div-edit {
+    padding: 3px;
+}
+
+.contect {
+    text-align: left;
+}
+
+.role {
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pmain {
+    text-align: left;
+}
+
+.roleName {
+    font-weight: bold;
+    font-size: 23px;
+    cursor: pointer;
+    /* مؤشر عند المرور */
+}
+
+
+.roleName svg {
+    color: #898a8b;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.roleName.hovered {
+    text-decoration: underline; /* أو أي تأثير آخر تريده */
+}
+
+.roleName.hovered svg {
+    color: #00ff15; /* تغيير لون الأيقونة */
+    opacity: 1; /* تأكد من بقاء الشفافية */
+}
+
+
+.roleName2 {
+
+    font-size: 16px;
+}
+
+.popup {
+    visibility: visible;
+    background-color: rgb(0, 180, 0);
+    color: white;
+    padding: 5px;
+    border-radius: 7px;
+    position: absolute;
+    top: 100px;
+    transform: translateX(50%);
+    z-index: 1;
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+    box-shadow: 0 0 10px rgba(145, 255, 0, 0.7);
+    /* تأثير الظل */
+}
+
+/* .tooltip {
+    visibility: visible;
+    background-color: #212224;
+    color: rgb(211, 209, 209);
+    padding: 5px;
+    border-radius: 7px;
+    position: absolute;
+    top: 136px;
+    transform: translateX(65%);
+    z-index: 1;
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+} */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.role svg {
+    transform: translateY(30%);
+}
+
+.devSvg {
+    color: #0011ff;
+}
+
+.hrBor {
+    border: 0;
+    height: 2px;
+    border-top: 2px solid #505050;
+    /* استخدام حدود بدلاً من الخلفية */
+    border-radius: 300% !important ;
+    /* لجعل الأطراف مدببة */
+    margin: 7px 0;
+    box-shadow: 0 0 10px rgb(114, 114, 114);
+
+}
+
+.h3AccName {
+    text-align: left;
+    color: #d1d1d1;
+    text-shadow: 0 0 8px #727272;
+    padding-top: 10px;
+}
+
+
+
+.background-video {
+    position: fixed;
+    /* استخدام fixed لتثبيت الفيديو في الخلفية */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    /* لجعل العرض 100% */
+    min-height: 100%;
+    /* لجعل الارتفاع 100% */
+    width: auto;
+    /* يسمح بتعديل العرض تلقائيًا */
+    height: auto;
+    /* يسمح بتعديل الارتفاع تلقائيًا */
+    z-index: -1;
+    /* لجعل الفيديو خلف المحتوى */
+    transform: translate(-50%, -50%);
+    /* لضبط مركز الفيديو */
+    filter: blur(5px);
+
+}
+
+
+.dot {
+    position: absolute;
+    width: 5px;
+    /* حجم النقطة */
+    height: 4px;
+    /* حجم النقطة */
+    background-color: rgb(255, 255, 255);
+    /* لون النقطة */
+    border-radius: 50%;
+    /* لجعلها دائرية */
+    top: 50%;
+    /* محاذاة العمودي */
+    left: 50%;
+    /* محاذاة الأفقي */
+    transform: translate(-50%, -50%);
+    /* لضبط المركز */
+}
+
+.circle {
+    position: absolute;
+    width: 27px;
+    /* يمكنك تعديل الحجم */
+    height: 27px;
+    /* يمكنك تعديل الحجم */
+    border-radius: 50%;
+    border: 3px solid rgba(145, 145, 145, 0.8);
+    /* يمكنك تعديل لون الحدود */
+    background-color: rgba(65, 65, 65, 0.2);
+    /* لون الدائرة */
+    pointer-events: none;
+    /* لكي لا تتأثر بالنقر */
+    transform: translate(-50%, -50%);
+    /* لضبط المركز */
+    transition: background-color 0.4s, transform 0.4s, width 0.4s, height 0.4s;
+    box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+    /* تأثير الظل */
+}
+
+.css-h1 {
+    text-align: center;
+    transform: translateX(-1%);
+    /* لضبط المركز */
+    color: #fff;
+    text-shadow: 0 0 10px #000000;
+}
+
+/* تعيين لون الخلفية لشريط التمرير */
+::-webkit-scrollbar {
+    width: 10px;
+    /* عرض شريط التمرير */
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(173, 173, 173);
+    /* لمتصفحات WebKit (مثل Chrome و Safari وأجزاء من Edge) */
+
+}
+
+/* تعيين لون الشريط نفسه */
+::-webkit-scrollbar-thumb {
+    background: #353535;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(0, 0, 0);
+}
